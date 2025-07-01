@@ -125,3 +125,5 @@ This project is open-source and available under the MIT License.
 Developed by [Eccentric Explorer](https://eccentriccoder01.github.io/Me)
 
 Feel free to reach out with any questions or feedback\!
+
+"Let the future tell the truth, and evaluate each one according to his work and accomplishments. The present is theirs; the future, for which I have really worked, is mine." - Nikola Tesla
