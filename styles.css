@@ -10,8 +10,8 @@
     --accent-color: #2d1f0b;
     --highlight-color: #3d2a0f;
     --gold-primary: #d4a017;
-    --gold-secondary: #f8de22;
-    --gold-light: #ffd700;
+    --gold-light: #c79e00;
+    --gold-secondary: #e6c200;
     --gold-dark: #b8860b;
     --text-light: #ffffff;
     --text-dark: #000000;
@@ -27,6 +27,8 @@ body {
     color: var(--text-light);
     background: var(--primary-color);
     overflow-x: hidden;
+    padding-left: 180px;
+
 }
 
 /* Enhanced Background Animation */
@@ -204,41 +206,6 @@ header {
         transform: translateX(0);
     }
 }
-
-/* Right-hand side navigation panel */
-.side-nav {
-    position: fixed;
-    top: 120px; /* Below header and dark mode button */
-    right: 20px;
-    padding: 15px 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-    font-family: Arial, sans-serif;
-}
-
-.side-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.side-nav li {
-    margin: 40px 0;
-}
-
-.side-nav a {
-    text-decoration: none;
-    color: rgba(160, 136, 2, 0.83);
-    font-weight: bold;
-    transition: color 0.3s;
-    font-size: 15px;;
-}
-
-.side-nav a:hover {
-    color: rgb(255, 217, 0);
-}
-
 
 /* Section Styles */
 section {
@@ -746,4 +713,117 @@ section {
     pointer-events: none;
     z-index: 1000;
     animation: teslaSparkle 1.5s ease-out forwards;
+}
+
+/* Refined Left Sidebar */
+.left-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 160px; /* reduced from 220px */
+    height: 100vh;
+    background: transparent; /* removed solid background */
+    padding: 90px 10px 90px 10px;
+    z-index: 999;
+    overflow-y: auto;
+}
+
+.left-sidebar h2 {
+    color: var(--gold-light);
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    text-align: center;
+    text-shadow: 0 0 10px var(--shadow-gold);
+}
+
+.left-sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+
+.left-sidebar li {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.left-sidebar a {
+    color: var(--gold-secondary);
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+}
+
+.left-sidebar a:hover {
+    color: var(--gold-light);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+@media (max-width: 768px) {
+  /* Hide the sidebar */
+  .left-sidebar {
+    display: none;
+  }
+
+  /* Make sure the rest of the content uses full width */
+  body > *:not(.left-sidebar):not(.theme-toggle) {
+    margin-left: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Optional: Remove any padding/margin that might constrain width */
+  header, section {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* Remove any padding-left from body */
+body {
+  overflow-x: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--text-light);
+  background: var(--primary-color);
+  padding-left: 0; /* make sure no padding here */
+}
+
+/* Sidebar fixed width */
+.left-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 180px; /* same width as margin below */
+  height: 100vh;
+  padding: 90px 10px 90px 10px;
+  overflow-y: auto;
+  z-index: 999;
+  background: transparent;
+}
+
+/* Main content shifted right to clear sidebar */
+.main-content {
+  margin-left: 180px; /* same as sidebar width */
+  padding: 20px; /* optional padding inside main content */
+}
+
+/* Responsive: Hide sidebar & remove margin on smaller screens */
+@media (max-width: 768px) {
+  .left-sidebar {
+    display: none;
+  }
+  .main-content {
+    margin-left: 0;
+    padding: 10px; /* optional for smaller screens */
+  }
 }

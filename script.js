@@ -42,26 +42,27 @@ function toggleTheme() {
     const button = document.querySelector('.theme-toggle');
     
     if (isDarkTheme) {
-        // Light theme
+        // Currently dark theme — switch to light theme
         root.style.setProperty('--primary-color', '#f8f9fa');
         root.style.setProperty('--secondary-color', '#e9ecef');
         root.style.setProperty('--accent-color', '#dee2e6');
         root.style.setProperty('--text-light', '#212529');
         root.style.setProperty('--text-dark', '#495057');
-        button.innerHTML = '☀️ Light Theme';
+        button.innerHTML = '🌙 Dark Theme';  // next theme to switch to
         document.body.style.color = '#212529';
     } else {
-        // Dark theme
+        // Currently light theme — switch to dark theme
         root.style.setProperty('--primary-color', '#1a1a2e');
         root.style.setProperty('--secondary-color', '#16213e');
         root.style.setProperty('--accent-color', '#0f3460');
         root.style.setProperty('--text-light', '#ffffff');
         root.style.setProperty('--text-dark', '#333333');
-        button.innerHTML = '🌙 Dark Theme';
+        button.innerHTML = '☀️ Light Theme';  // next theme to switch to
         document.body.style.color = '#ffffff';
     }
     isDarkTheme = !isDarkTheme;
 }
+
 
 function smoothScroll() {
     document.documentElement.style.scrollBehavior = 'smooth';
